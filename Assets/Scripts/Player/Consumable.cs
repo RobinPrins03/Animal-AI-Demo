@@ -8,7 +8,7 @@ public class Consumable : ScriptableObject, IVisitor {
 
     public void Visit(object o) {
         MethodInfo visitMethod = GetType().GetMethod("Visit", new Type[] {o.GetType()});
-        if (visitMethod == null && visitMethod != GetType().GetMethod("Visit", new Type[] {typeof(object)})){
+        if (visitMethod != null && visitMethod != GetType().GetMethod("Visit", new Type[] {typeof(object)})){
             visitMethod.Invoke(this, new object[] { o });
         } else {
             DefaultVisit(o);
@@ -21,12 +21,12 @@ public class Consumable : ScriptableObject, IVisitor {
     }
 
     public void Visit(HungerComponent hungerComponent) {
-        hungerComponent.hunger += HungerBonus;
+        hungerComponent.AddHunger(HungerBonus);
         Debug.Log("Consumable.Visit(HungerComponent):");
     }
 
     public void Visit(ThirstComponent thirstComponent) {
-        thirstComponent.thirst += ThirstBonus;
+        thirstComponent.AddThirst(ThirstBonus);
         Debug.Log("Consumable.Visit(ThirstComponent):");
     }
 }
