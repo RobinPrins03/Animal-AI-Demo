@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ba92d26aca23c41886822b4f95b670, type: 3}
-  m_Name: InRangeOfHunger
+  m_Name: AvoidPlayerCurveConsideration
   m_EditorClassIdentifier: Assembly-CSharp::UtilityAI.InRangeConsideration
-  maxDistance: 10
+  maxDistance: 20
   maxAngle: 360
-  targetTag: Food
+  targetTag: Player
   curve:
     serializedVersion: 2
     m_Curve:

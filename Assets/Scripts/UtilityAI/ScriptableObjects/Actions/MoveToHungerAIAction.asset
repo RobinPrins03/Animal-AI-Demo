@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1160c81f5952346b1ff9ab89ae8168, type: 3}
   m_Name: MoveToHungerAIAction
   m_EditorClassIdentifier: Assembly-CSharp::UtilityAI.MoveToTargetAIAction
-  targetTag: Hunger
-  consideration: {fileID: 11400000, guid: a6d91c5964ad223439abdea6e43c1a1d, type: 2}
+  targetTag: Food
+  consideration: {fileID: 11400000, guid: 9b3bf9d337cf7de41beb2cc5cd4f192a, type: 2}

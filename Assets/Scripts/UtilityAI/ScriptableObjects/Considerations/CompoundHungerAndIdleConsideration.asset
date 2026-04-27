@@ -15,5 +15,4 @@ MonoBehaviour:
   allMustBeNonZero: 1
   operation: 5
   considerations:
-  - {fileID: 11400000, guid: aeb3791f08aebe64ea10bb2b383aa103, type: 2}
-  - {fileID: 11400000, guid: 9b3bf9d337cf7de41beb2cc5cd4f192a, type: 2}
+  - {fileID: 0}

@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UtilityAI.Actions;
+using UtilityAI;
 using System.Collections.Generic;
 
-namespace UtilityAI.Brain {
+namespace UtilityAI {
     [RequireComponent(typeof(NavMeshAgent), typeof(Sensor))]
     public class Brain : MonoBehaviour {
         public List<AIAction> actions;
@@ -11,9 +11,11 @@ namespace UtilityAI.Brain {
 
         void Awake() {
             context = new Context(this);
+            
 
             foreach (var action in actions) {
                 action.Initialize(context);
+                Debug.Log($"Initialized action: {action.name}");
             }
         }
         //Change this if performance is bad

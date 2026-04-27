@@ -1,9 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using System;
 
-namespace UtilityAI.Brain {
+namespace UtilityAI {
     [RequireComponent(typeof(SphereCollider))]
     public class Sensor : MonoBehaviour {
         public float detectionRadius = 10f;
@@ -12,7 +11,7 @@ namespace UtilityAI.Brain {
         readonly List<Transform> detectedObjects = new(10);
         SphereCollider sphereCollider;
 
-         private void Start() {
+        void Start() {
             sphereCollider = GetComponent<SphereCollider>();
             sphereCollider.isTrigger = true;
             sphereCollider.radius = detectionRadius;
@@ -32,7 +31,7 @@ namespace UtilityAI.Brain {
         }
 
         void ProcessTrigger(Collider other, Action<Transform> action) {
-            if  (other.CompareTag("Untagged")) return;
+            if (other.CompareTag("Untagged")) return;
 
             foreach (string t in targetTags) {
                 if (other.CompareTag(t)) {
@@ -40,8 +39,10 @@ namespace UtilityAI.Brain {
                 }
             }
         }
-        
+
         public Transform GetClosestTarget(string tag) {
+            detectedObjects.RemoveAll(t => t == null);
+            
             if (detectedObjects.Count == 0) return null;
             
             Transform closestTarget = null;
@@ -61,4 +62,4 @@ namespace UtilityAI.Brain {
             return closestTarget;
         }
     }
-}
+} 
