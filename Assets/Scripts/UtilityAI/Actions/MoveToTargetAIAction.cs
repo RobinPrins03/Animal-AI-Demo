@@ -1,5 +1,4 @@
 using UnityEngine;
-using UtilityAI;
 
 namespace UtilityAI {
     [CreateAssetMenu(menuName = "UtilityAI/Actions/MoveToTargetAIAction")]

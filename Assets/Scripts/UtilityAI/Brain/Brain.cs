@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UtilityAI;
 using System.Collections.Generic;
 
 namespace UtilityAI {

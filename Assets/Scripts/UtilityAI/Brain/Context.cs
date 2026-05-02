@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityUtils;
-using UtilityAI;
+
 
 namespace UtilityAI {
     public class Context {
@@ -14,7 +14,6 @@ namespace UtilityAI {
         readonly Dictionary<string, object> data;
 
         public Context(Brain brain) {
-            //Preconditions.CheckNotNull(brain, nameof(brain));
             
             this.brain = brain;
             this.agent = brain.gameObject.GetOrAdd<NavMeshAgent>();
